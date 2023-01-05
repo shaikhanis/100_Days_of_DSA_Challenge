@@ -3,3 +3,8 @@
 here I am only update some basic question...
 
 }
+
+*Day 2
+{
+starting with loop and some basic question of loop...
+}

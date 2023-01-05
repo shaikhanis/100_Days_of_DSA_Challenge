@@ -4,19 +4,37 @@ import java.util.Scanner;
 
 public class primeNumber {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        System.out.println("Enter Number");
-        int n = in.nextInt();
+        Scanner sc = new Scanner(System.in);
+//        System.out.println("Enter Number");
+//        int n = sc.nextInt();
+//        int count = 0;
+//        for (int i=1; i<=n; i++){
+//            if(n%i == 0){
+//                count++;
+//            }
+//        }
+//        if(count==2){
+//            System.out.println("isPrime");
+//        }else {
+//            System.out.println("NotPrime");
+//        }
+       // print the prime number from range (0 to n)..
+        int i,j;
         int count = 0;
-        for (int i=1; i<=n; i++){
-            if(n%i == 0){
-                count++;
+        int n1 = sc.nextInt();
+        int n2 = sc.nextInt();
+        for(i = n1; i <n2; i++){
+            for(j = 2; j<i; j++){
+                if(i%j == 0){
+                    break;
+                }
+            }
+            if(i==j){
+                System.out.print(j+" , ");
+                count ++;
             }
         }
-        if(count==2){
-            System.out.println("isPrime");
-        }else {
-            System.out.println("NotPrime");
-        }
+        System.out.println();
+        System.out.println("count is "+count);
     }
 }
