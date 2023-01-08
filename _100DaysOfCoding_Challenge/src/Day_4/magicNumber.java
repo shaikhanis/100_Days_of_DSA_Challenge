@@ -7,22 +7,17 @@ public class magicNumber {
 
         Scanner in = new Scanner(System.in);
         System.out.print("Enter a number you want to check: ");
-        int n = in.nextInt();
-        int remainder, number, sum = 0;
-        number = n;
-        while (number > 9)
-        {
-            while (number > 0)
-            {
-                remainder = number % 10;
-                number = number / 10;
-                sum = sum + remainder;
+        int number = in.nextInt();
+        int sum=0;
+        while (number>0 || sum>9){
+            if(number == 0){
+                number = sum;
+                sum = 0;
             }
-            number = sum;
-            sum = 0;
-
+            sum = sum +(number%10);
+            number = number/10;
         }
-        if (number == 1)
+        if (sum == 1)
         {
             System.out.println("The given number is a magic number.");
         }
