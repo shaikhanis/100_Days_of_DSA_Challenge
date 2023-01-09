@@ -18,16 +18,15 @@ public class amstrongNumber {
         int n2=number;
         int sum=0;
 
-        
+
         while (n2!=0) {
 
             int mul=1;
             int rem = n2%10;
             n2 = n2/10;
 
-            for (int i = 1; i <= length; i++) {
-                mul = mul*rem;
-            }
+            rem =(int) Math.pow(rem,length);
+            mul = mul*rem;
 
             sum+=mul;
         }
