@@ -10,11 +10,11 @@ public class magicNumber {
         int number = in.nextInt();
         int sum=0;
         while (number>0 || sum>9){
-            if(number == 0){
-                number = sum;
-                sum = 0;
+            if(number==0){
+                number=sum;
+                sum=0;
             }
-            sum = sum +(number%10);
+            sum+=number%10;
             number = number/10;
         }
         if (sum == 1)
