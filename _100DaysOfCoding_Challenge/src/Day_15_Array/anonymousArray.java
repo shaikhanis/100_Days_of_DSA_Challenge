@@ -1,4 +1,4 @@
-package Day_16;
+package Day_15_Array;
 // means array without any name or declaration
 public class anonymousArray {
     public static void main(String[] args) {
