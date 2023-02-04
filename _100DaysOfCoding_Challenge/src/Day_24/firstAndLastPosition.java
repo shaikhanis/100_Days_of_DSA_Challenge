@@ -12,8 +12,18 @@ public class firstAndLastPosition {
     static int[] search(int[] nums, int target){
         int[] ans = {-1,-1};
 
-        nums[0] = searchOfIndex(nums,target,true);
-        if(nums[0] !=-1){
+//        int start = searchOfIndex(nums,target,true);
+//        int end = searchOfIndex(nums,target,false);
+//        ans[0] = start;
+//        ans[1] = end;
+
+//        int[] arr=new int[2];
+//        arr[0]=findFirst(nums,target);
+//        arr[1]=findLast(nums,target);
+//        return arr;
+
+        ans[0] = searchOfIndex(nums,target,true);
+        if(ans[0] !=-1){
             ans[1] = searchOfIndex(nums , target ,false);
         }
         return ans;
@@ -39,5 +49,54 @@ public class firstAndLastPosition {
             }
         }
         return ans;
+    }
+
+    // another method bout force approach call this method
+    static int findFirst(int[] arr,int target){
+        int Start=0;
+        int End=arr.length-1;
+
+        int index=-1;
+
+        while(Start<=End) {
+
+            int mid=Start+(End-Start)/2;
+
+            if(arr[mid]<target) {
+                Start=mid+1;
+            }
+            else if(arr[mid]>target) {
+                End=mid-1;
+            }
+            else {
+                index=mid;
+                End=mid-1;
+            }
+        }
+        return index;
+    }
+
+    static int findLast(int[] arr,int target){
+        int Start=0;
+        int End=arr.length-1;
+
+        int index=-1;
+
+        while(Start<=End) {
+
+            int mid=Start+(End-Start)/2;
+
+            if(arr[mid]<target) {
+                Start=mid+1;
+            }
+            else if(arr[mid]>target) {
+                End=mid-1;
+            }
+            else {
+                index=mid;
+                Start=mid+1;
+            }
+        }
+        return index;
     }
 }

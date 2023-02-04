@@ -19,7 +19,7 @@ public class infiniteArrayBinarySearch {
 
           // doubling the value of end by *2
 
-          end = end+(end-str+1)*2;
+          end = end+(end-str+1)*2; // or end = end*2;
 
           // assigning the temp value to the start this is new start
             str = temp;
